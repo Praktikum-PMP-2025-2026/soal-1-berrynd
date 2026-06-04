@@ -36,12 +36,30 @@ int main(){
                         swap = 1;
                     }
                     else if(a[j].nilai == a[j + 1].nilai){
-                        if
+                        if (strcmp(a[j].nama, a[j + 1].nama)==0){
+                            swap = 1;
+                        }
+                        else if(strcmp(a[j].nama, a[j + 1].nama)>0){
+                            swap = 1;
+                        }
                     }
                 }
             }
+            if(swap){
+                Artefak temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+
+            }
         }
     }
-
+    for(int i = 0; i < N; i++){
+        printf("%s %s %d %d\n",
+        a[i].nama,
+        a[i].kategori,
+        a[i].tahun,
+        a[i].nilai);
+    }
+    return 0;
 }
 
